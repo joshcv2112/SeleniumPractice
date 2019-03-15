@@ -24,6 +24,11 @@ class MainPage(BasePage):
         """ Triggers the search. """
         element = self.driver.find_element(*MainPageLocators.GO_BUTTON)
         element.click()
+    
+    def click_donate_button(self):
+        element = self.driver.find_element(*MainPageLocators.DONATE_BUTTON)
+        element.click()
+
 
 
 class SearchResultsPage(BasePage):

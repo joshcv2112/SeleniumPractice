@@ -15,7 +15,6 @@ class PythonOrgSearch(unittest.TestCase):
         Note that it does not look for any particular text in search results page. This test verifies that
         the results were not empty.
         """
-
         #Load the main page. In this case the home page of Python.org.
         main_page = page.MainPage(self.driver)
         #Checks if the word "Python" is in title
@@ -26,6 +25,11 @@ class PythonOrgSearch(unittest.TestCase):
         search_results_page = page.SearchResultsPage(self.driver)
         #Verifies that the results page is not empty
         assert search_results_page.is_results_found(), "No results found."
+
+    def test_donate_button(self):
+        main_page = page.MainPage(self.driver)
+        main_page.click_donate_button()
+
 
     def tearDown(self):
         self.driver.close()
